@@ -1,7 +1,7 @@
 # 🗄️ Banco de Dados
 
 ## 📝 Descrição do Projeto/Atividade
-[Descreva brevemente o projeto prático que você escolheu colocar aqui. Ex: "Criação do esquema de banco de dados relacional para um sistema de biblioteca escolar, incluindo modelagem entidade-relacionamento (DER), tabelas de relacionamento e consultas SQL com junções."]
+Criação do esquema de banco de dados relacional **AgroSphere**, desenvolvido para persistir e gerenciar as informações do projeto *Eve's Bloom*. A atividade engloba a modelagem entidade-relacionamento (DER) para conectar produtores rurais, mapear os protótipos automatizados em campo e estruturar uma tabela de logs históricos que registra as telemetrias de umidade, bateria e diagnósticos de danos enviados pelos sensores.
 
 ---
 
@@ -16,8 +16,8 @@
 ---
 
 ## 🛠️ Tecnologias e Ferramentas Utilizadas
-*   [SGBD Utilizado, ex: MySQL, PostgreSQL, SQLite, SQL Server]
-*   [Ferramenta de Modelagem, ex: brModelo, dbdiagram.io, draw.io]
+*   MySQL (ou MariaDB / SQL Server)
+*   dbdiagram.io (ou brModelo / Workbench)
 *   DBeaver ou cliente SQL similar
 
 ---
@@ -25,18 +25,25 @@
 ## 💻 Demonstração e Como Rodar
 
 ### Código/Script SQL Relevante Comentado
-[Insira aqui um trecho de código SQL que demonstre consultas complexas (utilizando JOIN, GROUP BY ou subqueries) ou a criação do esquema físico, comentando as principais partes. Exemplo:]
+O script abaixo demonstra uma consulta avançada utilizando junções (`INNER JOIN`), projetada para extrair um relatório gerencial que o dashboard Front-end utiliza para alertar o produtor sobre robôs que precisam de manutenção imediata:
+
 ```sql
--- Exemplo de query SQL (substitua pela sua):
+-- Consulta para consolidar a telemetria crítica dos robôs com os dados do produtor responsável
 SELECT 
-    alunos.nome AS nome_aluno,
-    livros.titulo AS titulo_livro,
-    emprestimos.data_emprestimo
-FROM emprestimos
-INNER JOIN alunos ON emprestimos.id_aluno = alunos.id
-INNER JOIN livros ON emprestimos.id_livro = livros.id
-WHERE emprestimos.status = 'pendente'
-ORDER BY emprestimos.data_emprestimo ASC;
+    produtores.nome AS nome_produtor,
+    robos.modelo AS modelo_robo,
+    logs_telemetria.nivel_bateria,
+    logs_telemetria.umidade_solo,
+    logs_telemetria.data_registro
+FROM logs_telemetria
+-- Junta a tabela de logs com a de robôs para identificar a máquina
+INNER JOIN robos ON logs_telemetria.id_robo = robos.id_robo
+-- Junta a tabela de robôs com a de produtores para saber quem gerencia
+INNER JOIN produtores ON robos.id_produtor = produtores.id
+-- Filtra apenas registros onde o robô notificou avaria física ou bateria crítica
+WHERE logs_telemetria.danificado = TRUE OR logs_telemetria.nivel_bateria < 20
+-- Ordena pelos registros de telemetria mais recentes do campo
+ORDER BY logs_telemetria.data_registro DESC;
 ```
 
 ### Instruções para Executar
