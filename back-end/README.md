@@ -1,7 +1,7 @@
 # ⚙️ Desenvolvimento Back-end
 
 ## 📝 Descrição do Projeto/Atividade
-[Descreva brevemente o projeto prático que você escolheu colocar aqui. Ex: "Desenvolvimento de uma API RESTful para cadastro de usuários e controle de acessos, com criptografia de senhas (bcrypt) e geração de tokens JWT."]
+Desenvolvimento da **AgroCore API**, uma API RESTful robusta projetada para servir como o motor de segurança e integração do ecossistema *Eve's Bloom*. O serviço é responsável por gerenciar o cadastro e controle de acesso dos produtores rurais e administradores, utilizando criptografia avançada (bcrypt) para proteção de senhas e geração de tokens JWT para autenticar com segurança as requisições feitas pelo aplicativo mobile e pelo dashboard front-end.
 
 ---
 
@@ -19,26 +19,35 @@
 *   Node.js
 *   Express
 *   TypeScript
-*   [Outra biblioteca ou ferramenta, ex: JWT, bcryptjs, Prisma, SQLite]
+*   JSON Web Token (JWT)
+*   Bcryptjs (Criptografia de senhas)
+*   Prisma ORM (Integração com Banco de Dados)
 
 ---
 
 ## 💻 Demonstração e Como Rodar
 
 ### Código Relevante Comentado
-[Insira aqui um trecho de código do servidor ou rotas que foi crucial para a lógica da aplicação, comentando as linhas mais importantes. Exemplo:]
-```javascript
-// Exemplo de código Express (substitua pelo seu):
+O trecho de código abaixo demonstra a implementação da rota de autenticação da API, garantindo o login seguro dos operadores do sistema agrícola:
+
+```typescript
+// Rota de login para autenticação de usuários no ecossistema AgroCore
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
-  const user = await database.findUserByEmail(email);
   
-  if (!user || !(await bcrypt.compare(password, user.passwordHash))) {
-    return res.status(401).json({ error: 'Credenciais inválidas' }); // Erro de autenticação
+  // Busca o usuário/produtor cadastrado no banco de dados através do e-mail
+  const produtor = await database.findUserByEmail(email);
+  
+  // Compara a senha digitada com o hash criptografado salvo no banco de dados
+  if (!produtor || !(await bcrypt.compare(password, produtor.passwordHash))) {
+    return res.status(401).json({ error: 'Credenciais inválidas' }); // Erro de autenticação seguro
   }
   
-  const token = jwt.sign({ userId: user.id }, SECRET_KEY, { expiresIn: '1h' });
-  return res.json({ token }); // Retorna o token para o cliente
+  // Gera um token JWT assinado contendo o ID do usuário, válido por 1 hora
+  const token = jwt.sign({ produtorId: produtor.id }, SECRET_KEY, { expiresIn: '1h' });
+  
+  // Retorna o token para o cliente (App Mobile ou Dashboard) autorizar as próximas ações
+  return res.json({ token }); 
 });
 ```
 
