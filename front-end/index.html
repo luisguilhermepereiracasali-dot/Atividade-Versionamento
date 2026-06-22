@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroStream Dashboard - Eve's Bloom</title>
+    <!-- Importação do Chart.js via CDN para os gráficos -->
+    <script src="https://jsdelivr.net"></script>
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --danger: #d32f2f;
+            --warning: #f57c00;
+            --dark: #1e1e1e;
+            --light: #f5f5f5;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .container {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .grid-alertas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .card-alerta {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 5px solid #ccc;
+        }
+        .alerta-critico { border-left-color: var(--danger); }
+        .alerta-atencao { border-left-color: var(--warning); }
+        .chart-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🌱 AgroStream Dashboard</h1>
+        <span>Status: Conectado ao Eve's Bloom</span>
+    </header>
+
+    <div class="container">
+        <h2>⚠️ Alertas Críticos do Campo</h2>
+        <div id="painel-alertas" class="grid-alertas">
+            <!-- Injetado dinamicamente via JS -->
+            <p>Carregando alertas de telemetria...</p>
+        </div>
+
+        <h2>📊 Histórico de Umidade do Solo</h2>
+        <div class="chart-container">
+            <canvas id="graficoSolo"></canvas>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
