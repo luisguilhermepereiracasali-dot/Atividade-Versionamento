@@ -1,7 +1,7 @@
 # 🤖 Inteligência Artificial (IA)
 
 ## 📝 Descrição do Projeto/Atividade
-[Descreva brevemente o projeto prático que você escolheu colocar aqui. Ex: "Desenvolvimento de um classificador automático de sentimentos em avaliações de clientes utilizando a API do Google Gemini em Python."]
+Desenvolvimento do motor cognitivo **Crefinix**, um sistema baseado em Inteligência Artificial desenvolvido em Python. O projeto utiliza a API do Google Gemini para simular processos lógicos avançados e de raciocínio fluido, atuando como um assistente intelectual capaz de analisar requisitos técnicos complexos, gerar arquiteturas de software integradas e propor otimizações de código de forma automatizada.
 
 ---
 
@@ -16,32 +16,43 @@
 ---
 
 ## 🛠️ Tecnologias e Ferramentas Utilizadas
-*   Python / Node.js
-*   SDK do Google GenAI (Gemini API) ou OpenAI API
-*   [Outra biblioteca ou ferramenta, ex: python-dotenv, LangChain]
+*   Python
+*   SDK do Google GenAI (Gemini API)
+*   python-dotenv (Gerenciamento seguro de chaves de API)
 
 ---
 
 ## 💻 Demonstração e Como Rodar
 
 ### Código Relevante Comentado
-[Insira aqui o trecho do código que faz a requisição para o modelo de IA e configura o prompt, comentando as partes fundamentais. Exemplo:]
+O trecho de código abaixo demonstra a configuração do ambiente da Crefinix, a estruturação do prompt contextualizado do sistema e a chamada assíncrona ao modelo generativo:
+
 ```python
-# Exemplo de código em Python usando a API do Gemini (substitua pelo seu):
 import google.generativeai as genai
 import os
+from dotenv import load_dotenv
 
+# Carrega a chave secreta da API a partir do arquivo .env de forma segura
+load_dotenv()
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+
+# Inicializa o modelo de linguagem de alto desempenho do Gemini
 model = genai.GenerativeModel('gemini-1.5-flash')
 
-def analisar_sentimento(texto_cliente):
-    prompt = f"Analise o sentimento do seguinte texto. Responda apenas com: POSITIVO, NEGATIVO ou NEUTRO. Texto: {texto_cliente}"
-    response = model.generate_content(prompt)
+def simular_raciocinio_crefinix(comando_tecnico):
+    # Contextualização do prompt para blindar o comportamento da IA como a mente Crefinix
+    prompt_sistema = (
+        f"Você é o Crefinix, uma mente artificial criativa com capacidades analíticas avançadas. "
+        f"Processe a seguinte solicitação técnica de forma lógica e objetiva: {comando_tecnico}"
+    )
+    
+    # Envia a requisição com o contexto e captura a resposta gerada
+    response = model.generate_content(prompt_sistema)
     return response.text.strip()
 ```
 
 ### Instruções para Executar
-1. Certifique-se de ter o Python (ou Node.js) instalado em sua máquina.
+1. Certifique-se de ter o Python instalado em sua máquina.
 2. Instale as dependências necessárias:
    ```bash
    pip install google-generativeai python-dotenv
