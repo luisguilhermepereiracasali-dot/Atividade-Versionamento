@@ -8,23 +8,22 @@ Este projeto consiste na própria **gestão, organização e controle de versão
 ## 🧠 Reflexão de Aprendizado
 
 ### 1. O que aprendi?
-[Substitua este texto por sua resposta. Explique em suas palavras o que é e para que serve o padrão adotado neste projeto:]
-*   **Conventional Commits (Commits Convencionais):** [O que é e quais regras principais você seguiu para escrever mensagens de commits?]
+*   **Conventional Commits (Commits Convencionais):** Aprendi que é uma especificação de mensagens de commit que adiciona regras gramaticais legíveis tanto por humanos quanto por ferramentas automáticas. Segui a estrutura obrigatória utilizando tipos claros de alteração como `feat` para novas funcionalidades, `fix` para correções de bugs, `docs` para documentações e `chore` para manutenções rotineiras, além de incluir o escopo do projeto alterado entre parênteses para categorizar perfeitamente as mensagens.
 
 ### 2. Para que serve (Por que aprendi)?
-[Substitua este texto por sua resposta. Por que grandes empresas e projetos open-source utilizam essa convenção de histórico? Como isso ajuda na colaboração de grandes equipes e no rastreamento de mudanças e bugs?]
+Grandes empresas e projetos de código aberto usam essa convenção porque ela organiza o histórico de alterações do Git de forma cronológica e semântica. Isso elimina mensagens genéricas e inúteis (como "ajustes" ou "consertando erro"), facilitando a identificação imediata de onde um bug foi introduzido ou quando uma ferramenta foi lançada. Além disso, permite automatizar a geração de relatórios de mudanças (Changelogs) e o controle de versões do software (Semantic Versioning).
 
 ---
 
 ## 💻 Demonstração das Práticas de Versionamento
 
 ### Histórico de Commits Semânticos
-[Insira abaixo exemplos reais de mensagens de commit que você efetuou durante a construção deste portfólio. Indique o tipo e o escopo de cada um.]
+Abaixo estão exemplos práticos de mensagens de commit efetuadas durante a construção deste portfólio, demonstrando a aplicação real da especificação para cada módulo do ecossistema:
 
-*   `feat(mobile): ...` (Explicar o commit)
-*   `docs(readme): ...` (Explicar o commit)
-*   `fix(backend): ...` (Explicar o commit)
-*   `chore: ...` (Explicar o commit)
+*   `feat(mobile): add real-time telemetry tracking for Eve's Bloom app` (Adição da lógica de monitoramento de sensores em campo)
+*   `docs(readme): structure main dashboard and front-end requirements` (Atualização da documentação da interface web AgroStream)
+*   `fix(backend): correct jwt expiration middleware token validation` (Correção de bug de autenticação na API AgroCore)
+*   `chore: configure initial repository structure and licenses` (Tarefas de manutenção de arquivos sem alteração de código)
 
 ---
 
