@@ -1,7 +1,7 @@
 # 📱 Desenvolvimento Mobile
 
 ## 📝 Descrição do Projeto/Atividade
-[Descreva brevemente o projeto prático que você escolheu colocar aqui. Ex: "Desenvolvimento de um aplicativo de previsão do tempo em React Native e TypeScript, integrado com a API OpenWeatherMap."]
+Desenvolvimento do aplicativo móvel **Eve's Bloom** utilizando React Native. O aplicativo foi projetado para atender produtores do ramo de agronegócio, funcionando como uma central de monitoramento portátil que exibe a telemetria de robôs de campo em tempo real. O app monitora a qualidade do solo, a área de plantio, o nível de bateria do protótipo, o status do reservatório de sementes e envia notificações push caso ocorra algum dano estrutural durante a operação.
 
 ---
 
@@ -18,25 +18,31 @@
 ## 🛠️ Tecnologias e Ferramentas Utilizadas
 *   React Native / Expo
 *   TypeScript
-*   [Outra biblioteca, ex: Axios, React Navigation, React Native Vector Icons]
+*   Axios (para consumo de API)
+*   React Navigation (para navegação entre telas do app)
 
 ---
 
 ## 💻 Demonstração e Como Rodar
 
 ### Código Relevante Comentado
-[Insira aqui um trecho de código TypeScript/React Native que foi crucial para o projeto, comentando as linhas mais importantes para demonstrar seu entendimento. Exemplo:]
+O trecho de código abaixo demonstra a implementação do hook `useEffect` e o gerenciamento de estados assíncronos para buscar e atualizar os dados críticos de telemetria do robô direto da API para a tela do smartphone:
+
 ```tsx
-// Exemplo de código (substitua pelo seu):
-const fetchWeatherData = async (city: string) => {
+// Função responsável por buscar os dados de telemetria do robô agrícola
+const buscarDadosTelemetria = async (roboId: string) => {
   try {
     setLoading(true);
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=SUA_API_KEY`);
+    // Consome os dados de campo expostos pela nossa API central (AgroCore)
+    const response = await fetch(`https://agrocore.com{roboId}`);
     const data = await response.json();
-    setWeather(data);
+    
+    // Atualiza o estado do app com o nível de bateria, solo e alertas de danos
+    setStatusRobo(data);
   } catch (err) {
-    setError('Não foi possível carregar os dados de clima.');
+    setError('Não foi possível conectar ao protótipo em campo.');
   } finally {
+    // Finaliza o estado de carregamento da interface do usuário
     setLoading(false);
   }
 };
