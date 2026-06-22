@@ -8,15 +8,15 @@ Desenvolvimento do motor cognitivo **Crefinix**, um sistema baseado em Inteligê
 ## 🧠 Reflexão de Aprendizado
 
 ### 1. O que aprendi?
-[Substitua este texto por sua resposta. Explique em suas palavras os conceitos de IA que você aprendeu com esta atividade, tais como: modelos de linguagem (LLMs), Engenharia de Prompts (Prompt Engineering), consumo de SDKs/APIs de IA, estruturação de dados de resposta (JSON Schema), ou conceitos de Machine Learning.]
+Compreendi o funcionamento prático de Grandes Modelos de Linguagem (LLMs) e como interagir com eles via SDK oficial. Aprendi técnicas de Engenharia de Prompts (Prompt Engineering) para delimitar o papel da IA, fornecendo contextos estruturados e restrições para evitar alucinações. Aprendi também sobre a parametrização de hiperparâmetros (como controle de criatividade) e o gerenciamento de credenciais usando variáveis de ambiente de forma segura.
 
 ### 2. Para que serve (Por que aprendi)?
-[Substitua este texto por sua resposta. Explique como a integração de IA pode agregar valor a sistemas de software tradicionais. Quais são os casos de uso práticos no mercado onde a inteligência artificial ajuda a automatizar tarefas complexas?]
+A integração de IA generativa em sistemas tradicionais eleva o software de uma ferramenta passiva de armazenamento de dados para um agente ativo de soluções. Aprender a consumir essas APIs prepara o desenvolvedor para o mercado atual, permitindo automatizar tarefas de alta complexidade cognitiva — como análise de contratos, geração de códigos, atendimento inteligente ou processamento de grandes volumes de texto não estruturado — reduzindo custos e tempo operacional na indústria.
 
 ---
 
 ## 🛠️ Tecnologias e Ferramentas Utilizadas
-*   Python
+*   Python 3
 *   SDK do Google GenAI (Gemini API)
 *   python-dotenv (Gerenciamento seguro de chaves de API)
 
