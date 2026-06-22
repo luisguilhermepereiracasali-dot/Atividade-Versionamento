@@ -1,16 +1,15 @@
 # 🚀 Hub de Projetos & Portfólio Técnico
 
 ## 👤 Identificação do Estudante
-*   **Nome:** [Seu Nome Completo aqui]
+*   **Nome:** Luís Guilherme Pereira Casali
 *   **Curso:** Técnico em Desenvolvimento de Sistemas
 *   **Período:** 2º Bimestre / Ano Corrente
 
 ---
 
 ## 📊 Status do Repositório
-<!-- Você pode substituir ou configurar estes badges no shields.io conforme seu repositório -->
-![Commits Convencionais](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow?style=for-the-badge&logo=git)
-![Licença](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Commits Convencionais](https://shields.io)
+![Licença](https://shields.io)
 
 ---
 
@@ -36,33 +35,33 @@ Selecione a disciplina abaixo para visualizar os projetos, explicações e instr
 ## 📂 Resumo dos Projetos do Bimestre
 
 ### 1. 📱 Desenvolvimento Mobile
-*   **Projeto:** [Nome do aplicativo ou atividade de Mobile]
-*   **Descrição Curta:** [Descreva em uma frase o que o aplicativo faz, ex: Um app em React Native com TypeScript que consulta uma API de previsão do tempo.]
+*   **Projeto:** Eve's Bloom
+*   **Descrição Curta:** Aplicativo voltado para o setor de agronegócio com o objetivo de monitorar a qualidade do solo e a área de plantio de protótipos automatizados. O app acompanha em tempo real o nível de bateria, o status de abastecimento do reservatório de sementes e emite alertas sobre possíveis danos estruturais sofridos pelo equipamento durante a operação.
 *   **Acesso Direto:** [Ir para a pasta do projeto](./mobile/)
 
 ### 2. 💻 Desenvolvimento Front-end
-*   **Projeto:** [Nome do projeto ou atividade de Front-end]
-*   **Descrição Curta:** [Descreva o projeto front-end, ex: Uma landing page responsiva e moderna usando CSS Grid e Flexbox.]
+*   **Projeto:** AgroStream Dashboard
+*   **Descrição Curta:** Painel web responsivo desenvolvido com HTML5, CSS3 (Flexbox/Grid) e JavaScript. A interface exibe gráficos em tempo real e tabelas dinâmicas com os dados consolidados de telemetria dos sensores de solo e status dos protótipos em campo do projeto Eve's Bloom.
 *   **Acesso Direto:** [Ir para a pasta do projeto](./front-end/)
 
 ### 3. ⚙️ Desenvolvimento Back-end
-*   **Projeto:** [Nome da API ou serviço de Back-end]
-*   **Descrição Curta:** [Descreva o back-end, ex: Uma API RESTful em Node.js com Express para controle de tarefas com autenticação.]
+*   **Projeto:** AgroCore API
+*   **Descrição Curta:** API RESTful robusta desenvolvida em Node.js com Express (ou C#/.NET). O serviço atua como o motor central do ecossistema, processando requisições do aplicativo mobile e salvando logs de telemetria dos robôs agrícolas com rotas seguras e arquitetura limpa.
 *   **Acesso Direto:** [Ir para a pasta do projeto](./back-end/)
 
 ### 4. 🗄️ Banco de Dados
-*   **Projeto:** [Nome da atividade ou modelagem de Banco de Dados]
-*   **Descrição Curta:** [Descreva o projeto de banco de dados, ex: Modelagem conceitual e física de um e-commerce com scripts de criação de tabelas e queries SQL.]
+*   **Projeto:** Modelagem de Dados AgroSphere
+*   **Descrição Curta:** Estrutura e modelagem física de um banco de dados relacional (SQL) construído para suportar o ecossistema. Inclui diagramas de Entidade-Relacionamento (DER), scripts de criação de tabelas com chaves primárias/estrangeiras e consultas otimizadas para puxar relatórios de qualidade de solo.
 *   **Acesso Direto:** [Ir para a pasta do projeto](./banco-de-dados/)
 
 ### 5. 🤖 Inteligência Artificial (IA)
-*   **Projeto:** [Nome da atividade ou script de IA]
-*   **Descrição Curta:** [Descreva a atividade de IA, ex: Um script em Python que consome a API do Gemini para categorizar feedbacks de usuários automaticamente.]
+*   **Projeto:** Crefinix
+*   **Descrição Curta:** Uma inteligência artificial criativa equipada com uma API própria. O sistema foi projetado para simular de forma avançada e fluida os processos cognitivos humanos, superando limitações físicas biológicas para atuar no processamento inteligente e geração de soluções de software.
 *   **Acesso Direto:** [Ir para a pasta do projeto](./ia/)
 
 ### 6. 🔧 Versionamento e Gestão de Código
 *   **Projeto:** Este próprio Repositório Portfólio.
-*   **Descrição Curta:** Gestão profissional do portfólio aplicando o padrão de Conventional Commits.
+*   **Descrição Curta:** Gestão profissional do portfólio aplicando o padrão de Conventional Commits para manter o histórico de alterações limpo e legível.
 *   **Acesso Direto:** [Ir para a pasta do projeto](./versionamento/)
 
 ---
@@ -72,7 +71,7 @@ Caso queira testar qualquer um dos projetos localmente, siga os passos abaixo no
 
 1.  **Clonar o repositório:**
     ```bash
-    git clone https://github.com/[seu-usuario]/[seu-repositorio-portfolio].git
+    git clone https://github.com[seu-usuario]/[seu-repositorio-portfolio].git
     ```
 2.  **Entrar no diretório:**
     ```bash
